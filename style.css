@@ -1,0 +1,315 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-primary);
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --ff-primary: 'Rubik', sans-serif;
+  font-size: 18px;
+}
+body {
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+}
+h1 {
+  font-weight: 300;
+}
+p {
+  font-weight: 500;
+}
+main {
+  height: 100vh;
+}
+.container {
+  max-width: 1114px;
+  margin-inline: auto;
+  margin-top: 80px;
+}
+@media (min-width: 550px) {
+  .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+}
+.cards-grid {
+  display: grid;
+  gap: 25px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 330px);
+}
+@media (min-width: 550px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, 256px);
+    gap: 30px;
+  }
+}
+.stacked {
+  display: grid;
+}
+.stacked > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: transform 0.1s ease-in-out;
+}
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  filter: brightness(120%);
+}
+body {
+  background-color: hsl(226, 43%, 10%);
+  color: white;
+}
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+}
+.card:hover {
+  cursor: pointer;
+  filter: brightness(130%);
+}
+.card__bg {
+  display: grid;
+  justify-content: end;
+  padding-inline: 1.25rem;
+}
+.card__bg img {
+  width: 45px;
+}
+.card__main {
+  background-color: hsl(235, 46%, 20%);
+  align-self: end;
+  margin-top: 40px;
+  border-radius: 10px;
+  padding: 1.25rem;
+  height: 120px;
+}
+@media (min-width: 550px) {
+  .card__main {
+    height: 200px;
+    margin-top: 45px;
+  }
+}
+.card__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.card__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+@media (min-width: 550px) {
+  .card__content {
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+}
+.card__content__main {
+  font-size: 21px;
+  font-weight: 300;
+}
+@media (min-width: 550px) {
+  .card__content__main {
+    font-size: 40px;
+  }
+}
+.card__content__second {
+  justify-self: end;
+  font-size: 12px;
+  font-weight: 400;
+  color: hsl(236, 100%, 87%);
+}
+@media (min-width: 550px) {
+  .card__content__second {
+    justify-self: unset;
+  }
+}
+.title {
+  font-size: 16px;
+  font-weight: 500;
+}
+.settings-btn {
+  place-self: end;
+}
+.card__bg-work {
+  background-color: hsl(15, 100%, 70%);
+}
+.card__bg-play {
+  background-color: hsl(195, 74%, 62%);
+}
+.card__bg-study {
+  background-color: hsl(348, 100%, 68%);
+}
+.card__bg-exercise {
+  background-color: hsl(145, 58%, 55%);
+}
+.card__bg-social {
+  background-color: hsl(264, 64%, 52%);
+}
+.card__bg-selfcare {
+  background-color: hsl(43, 84%, 65%);
+}
+.hero-card {
+  background-color: hsl(235, 46%, 20%);
+}
+@media (min-width: 550px) {
+  .hero-card {
+    grid-row: span 2;
+  }
+}
+.hero-card__header {
+  display: grid;
+  gap: 5%;
+  grid-template-columns: 30% 65%;
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 10px;
+  padding: 2rem 1.25rem;
+  z-index: 10;
+  margin-bottom: 4rem;
+}
+@media (min-width: 550px) {
+  .hero-card__header {
+    grid-template-columns: 1fr;
+    height: 355px;
+    margin-bottom: 165px;
+  }
+}
+.hero-card__profile-img {
+  width: 65px;
+  border: 2px solid white;
+  border-radius: 50%;
+  place-self: center;
+}
+@media (min-width: 550px) {
+  .hero-card__profile-img {
+    place-self: start;
+  }
+}
+.hero-card__title {
+  font-size: 1rem;
+  align-self: center;
+}
+@media (min-width: 550px) {
+  .hero-card__title {
+    place-self: start;
+    font-size: 2rem;
+  }
+}
+.hero-card__title p {
+  color: hsl(236, 100%, 87%);
+  font-size: 0.8333em;
+}
+.hero-card__title h1 {
+  font-size: 1.1666em;
+}
+.hero-card__content {
+  font-size: 1rem;
+  align-self: end;
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 10px;
+  line-height: 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (min-width: 550px) {
+  .hero-card__content {
+    grid-template-columns: 1fr;
+    height: 165px;
+    padding-left: 1.25rem;
+    line-height: 1;
+  }
+}
+.hero-card__content > div {
+  text-align: center;
+  font-size: 1em;
+  color: hsl(235, 45%, 61%);
+  line-height: inherit;
+  transition: transform 0.2s ease-in-out;
+}
+@media (min-width: 550px) {
+  .hero-card__content > div {
+    text-align: left;
+    align-self: center;
+    font-size: 1.025em;
+  }
+}
+.hero-card__content > div:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: white;
+}

@@ -1,0 +1,168 @@
+@import '../utilities/_variables';
+
+.card {
+  border-radius: @Border-radius;
+  overflow: hidden;
+  transition: all .1s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(130%);
+  }
+  &__bg {
+    display: grid;
+    justify-content: end;
+    padding-inline: @card-padding;
+    img {
+      width: 45px;
+    }
+  }
+  &__main {
+    background-color: @Dark-blue;
+    align-self: end;
+    margin-top: @card-tab-height1;
+    border-radius: @Border-radius;
+    padding: @card-padding;
+    height: 120px;
+    @media (min-width: @MScreen) {
+      height: 200px;
+      margin-top: @card-tab-height2;
+    }
+  }
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    @media (min-width: @MScreen) {
+      grid-template-columns: 1fr;
+      margin-top: 1rem;
+    }
+    &__main {
+      font-size: 21px;
+      font-weight: 300;
+      @media (min-width: @MScreen) {
+        font-size: 40px;
+      }
+    }
+    &__second {
+      justify-self: end;
+      font-size: 12px;
+      font-weight: 400;
+      color: @Pale-Blue;
+      @media (min-width: @MScreen) {
+        justify-self: unset;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.settings-btn {
+  place-self: end;
+}
+
+.card__bg {
+  &-work {
+    background-color: @Light-orange;
+  }
+  &-play {
+    background-color: @Soft-blue;
+  }
+  &-study {
+    background-color: @Light-red;
+  }
+  &-exercise {
+    background-color: @Lime-green;
+  }
+  &-social {
+    background-color: @Violet;
+  }
+  &-selfcare {
+    background-color: @Soft-yellow;
+  }
+}
+
+.hero-card {
+  background-color: @Dark-blue;
+  @media (min-width: @MScreen) {
+    grid-row: span 2;
+  }
+  &__header {
+    display: grid;
+    gap: 5%;
+    grid-template-columns: 30% 65%;
+    @media (min-width: @MScreen) {
+      grid-template-columns: 1fr;
+      height: 355px;
+      margin-bottom: 165px;
+    }
+    background-color: @Blue;
+    border-radius: @Border-radius;
+    padding: 2rem @card-padding;
+    z-index: 10;
+    margin-bottom: 4rem;
+  }
+  &__profile-img {
+    width: 65px;
+    border: 2px solid white;
+    border-radius: 50%;
+    place-self: center;
+    @media (min-width: @MScreen) {
+      place-self: start;
+    }
+  }
+  &__title {
+    font-size: 1rem; // 18px
+    align-self: center;
+    @media (min-width: @MScreen) {
+      place-self: start;
+      font-size: 2rem; // 36px
+    }
+    & p {
+      color: @Pale-Blue;
+      font-size: 0.8333em; // 15px / 30px
+    }
+    & h1 {
+      font-size: 1.1666em; // 21px / 42px
+    }
+  }
+  &__content {
+    font-size: 1rem; // 18px
+    align-self: end;
+    background-color: @Dark-blue;
+    border-radius: @Border-radius;
+    line-height: 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @media (min-width: @MScreen) {
+      grid-template-columns: 1fr;
+      height: 165px;
+      padding-left: 1.25rem;
+      line-height: 1;
+    }
+    & > div {
+      text-align: center;
+      font-size: 1em; // 18px
+      color: @Desaturated-blue;
+      line-height: inherit;
+      transition: transform .2s ease-in-out;
+      @media (min-width: @MScreen) {
+        text-align: left;
+        align-self: center;
+        font-size: 1.025em;
+      }
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        color: white;
+      }
+    }
+  }
+}

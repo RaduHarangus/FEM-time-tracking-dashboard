@@ -1,0 +1,33 @@
+main {
+  height: 100vh;
+}
+
+.container {
+  //width: 100vw;
+  max-width: 1114px;
+  margin-inline: auto;
+  margin-top: 80px;
+  @media (min-width: @MScreen) {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+  //outline: 1px solid palegreen;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 25px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 330px);
+  @media (min-width: @MScreen) {
+    grid-template-columns: repeat(auto-fit, 256px);
+    gap: 30px;
+  }
+  & > * {
+    //margin-inline: auto;
+  }
+}
+
+
