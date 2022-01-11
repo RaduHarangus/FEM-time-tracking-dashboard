@@ -117,11 +117,16 @@ $('.plan-btn').on('click', function() {
 });
 
 function changePlan(plan) {
+    let planText = '';
+    if (plan === 'daily' ) planText = 'Yesterday';
+    if (plan === 'weekly' ) planText = 'Last Week';
+    if (plan === 'monthly' ) planText = 'Last Month';
+
     $('.card__content__main').each( function(index) {
         $(this).text(entryArray[index].timeframes[plan].current + 'hrs');
     });
     $('.card__content__second').each( function(index) {
-        $(this).text('Last Week - ' + entryArray[index].timeframes[plan].previous + 'hrs');
+        $(this).text(planText + ' - ' + entryArray[index].timeframes[plan].previous + 'hrs');
     });
 }
 
