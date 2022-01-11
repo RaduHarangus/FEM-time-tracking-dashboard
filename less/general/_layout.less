@@ -1,9 +1,8 @@
 main {
-  height: 100vh;
+  height: 95vh;
 }
 
 .container {
-  //width: 100vw;
   max-width: 1114px;
   margin-inline: auto;
   margin-top: 80px;
@@ -25,8 +24,12 @@ main {
     grid-template-columns: repeat(auto-fit, 256px);
     gap: 30px;
   }
-  & > * {
-    //margin-inline: auto;
+}
+
+.footer {
+  margin-top: 16vh;
+  @media (min-width: @MScreen) {
+    margin-top: 0;
   }
 }
 
