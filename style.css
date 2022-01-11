@@ -83,8 +83,18 @@ h1 {
 p {
   font-weight: 500;
 }
+html {
+  position: relative;
+}
 main {
-  height: 95vh;
+  height: 100vh;
+}
+.footer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 .container {
   max-width: 1114px;
@@ -109,14 +119,6 @@ main {
   .cards-grid {
     grid-template-columns: repeat(auto-fit, 256px);
     gap: 30px;
-  }
-}
-.footer {
-  margin-top: 16vh;
-}
-@media (min-width: 550px) {
-  .footer {
-    margin-top: 0;
   }
 }
 .stacked {
